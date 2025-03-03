@@ -155,7 +155,7 @@
 
     <script>
         document.getElementById("lightBulb").addEventListener("click", function() {
-            fetch("http://192.168.1.100/toggle")  // 🔴 REEMPLAZA 192.168.1.100 CON LA IP DE TU ESP32
+            fetch("http://172.20.10.6/toggle")  // 
                 .then(response => response.text())
                 .then(data => {
                     if (data === "ON") {
