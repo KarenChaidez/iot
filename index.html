@@ -154,16 +154,17 @@
     </div>
 
     <script>
-        document.getElementById('lightBulb').addEventListener('click', function() {
-            fetch('/toggle-light')
+        document.getElementById("lightBulb").addEventListener("click", function() {
+            fetch("http://192.168.1.100/toggle")  // 🔴 REEMPLAZA 192.168.1.100 CON LA IP DE TU ESP32
                 .then(response => response.text())
                 .then(data => {
                     if (data === "ON") {
-                        document.querySelector('.bulb').classList.add('on');
+                        document.getElementById("lightBulb").classList.add("on");
                     } else {
-                        document.querySelector('.bulb').classList.remove('on');
+                        document.getElementById("lightBulb").classList.remove("on");
                     }
-                });
+                })
+                .catch(error => console.error("Error:", error));
         });
 
 
