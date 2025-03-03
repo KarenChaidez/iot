@@ -155,8 +155,7 @@
 
     <script>
         document.getElementById('lightBulb').addEventListener('click', function() {
-            // Control del foco mediante AJAX
-            fetch('/toggle')
+            fetch('/toggle-light')
                 .then(response => response.text())
                 .then(data => {
                     if (data === "ON") {
@@ -166,6 +165,7 @@
                     }
                 });
         });
+
 
         // Función para obtener los eventos del historial
         function getSensorHistory() {
